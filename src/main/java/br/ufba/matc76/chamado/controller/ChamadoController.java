@@ -137,4 +137,33 @@ public class ChamadoController {
 
     @GetMapping("")
     public List<Chamado> listar() {return ChamadosList;}
+
+    @GetMapping("/setor")
+    public List<Chamado> filtrarPorSetor(@RequestParam String nome) {
+        return ChamadosList.stream()
+                .filter(c -> nome.equalsIgnoreCase(c.setor))
+                .toList();
+    }
+
+    @GetMapping("/prioridade")
+    public List<Chamado> filtrarPorPrioridade(@RequestParam String nivel) {
+        Prioridade prioridade;
+        try {
+            prioridade = Prioridade.valueOf(nivel.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Prioridade inválida: " + nivel);
+        }
+
+        return ChamadosList.stream()
+                .filter(c -> c.prioridade == prioridade)
+                .toList();
+    }
+
+    @GetMapping("/busca")
+    public List<Chamado> buscarPorTitulo(@RequestParam String texto) {
+        String termo = texto.toLowerCase();
+        return ChamadosList.stream()
+                .filter(c -> c.titulo != null && c.titulo.toLowerCase().contains(termo))
+                .toList();
+    }
 }
