@@ -4,13 +4,75 @@ Trabalho da disciplina **Linguagens para Aplicação Comercial** (Java, Spring B
 
 A API gerencia chamados de suporte técnico. Os dados ficam em memória, em coleções Java, sem banco de dados.
 
+## Integrantes
+
+- Jaiana Santana
+- Micael Macedo
+- Rafael Rocha
+
+## Tecnologias
+
+- Java 25
+- Spring Boot 4.1 (Spring Web)
+- Jackson (conversão JSON, incluído no Spring Web)
+- Maven (via Maven Wrapper `mvnw`)
+
 ## Como executar
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-A aplicação sobe em `http://localhost:8080`.
+A aplicação sobe em `http://localhost:8080`. 
+
+
+## Endpoints
+
+| Método | Caminho | Descrição | Respostas |
+|---|---|---|---|
+| GET | `/chamados` | Lista todos os chamados | 200 |
+| GET | `/chamados/{id}` | Consulta um chamado pelo ID | 200, 404, 400 (ID não numérico) |
+| GET | `/chamados/setor?nome=financeiro` | Filtra por setor, sem diferenciar maiúsculas de minúsculas | 200 (lista, possivelmente vazia) |
+| GET | `/chamados/prioridade?nivel=alta` | Filtra por prioridade, sem diferenciar maiúsculas de minúsculas | 200, 400 (prioridade inexistente) |
+| GET | `/chamados/busca?texto=impressora` | Busca chamados cujo título contém o texto | 200 (lista, possivelmente vazia) |
+| GET | `/chamados/criticos` | Lista chamados de prioridade ALTA ainda não resolvidos | 200 |
+| GET | `/chamados/resumo` | Quantidade de chamados por status e total geral | 200 |
+| POST | `/chamados` | Cadastra um novo chamado a partir de um JSON | 201 |
+
+Exemplo de corpo para o `POST`:
+
+```json
+{
+  "titulo": "Servidor de arquivos fora do ar",
+  "solicitante": "Jaiana Santana",
+  "setor": "TI",
+  "prioridade": "ALTA",
+  "status": "ABERTO"
+}
+```
+
+O campo `status` é opcional. Se não for informado, o chamado é criado como `ABERTO`. O `id` não deve ser enviado, pois é gerado pela API.
+
+## Testes
+
+As evidências de 15 requisições (consultas, filtros, situações sem correspondência, entrada inválida, cadastro e verificação dos dados cadastrados) estão em [`docs/TESTES.md`](docs/TESTES.md), com a requisição, a resposta HTTP/JSON e a explicação de cada resultado.
+
+Para reproduzi-las:
+
+1. Instale a extensão **REST Client** (Huachao Mao) no VS Code.
+2. Inicie a aplicação com `./mvnw spring-boot:run`.
+3. Abra [`docs/requisicoes.http`](docs/requisicoes.http) e clique em **Send Request** acima de cada requisição, na ordem.
+
+Os testes devem ser executados com a aplicação recém-iniciada, pois os IDs e as contagens dependem do estado inicial dos dados em memória.
+
+## Decisões de projeto
+
+- **Geração de ID com `AtomicInteger`:** um único gerador é usado tanto pelos 10 chamados iniciais quanto pelo `POST`. Ele só avança e nunca recalcula a partir do tamanho da lista, o que evita IDs repetidos. Por ser atômico, também evita que duas requisições simultâneas recebam o mesmo ID.
+- **Status padrão `ABERTO`:** se o `POST` não informar o status, o chamado é criado como `ABERTO`. Um status nulo deixaria o `/resumo` inconsistente (a soma dos status não bateria com o total) e faria o chamado aparecer indevidamente em `/criticos`.
+- **Lista vazia × 404:** filtros e buscas sem resultado devolvem `200` com `[]`, porque a consulta é válida e apenas não encontrou nada. Já a consulta por ID inexistente devolve `404`, porque o recurso específico pedido não existe.
+- **Prioridade inválida → 400:** no filtro de prioridade, o texto é convertido para maiúsculas e transformado no enum com `Prioridade.valueOf`. Valores inexistentes geram `400 Bad Request` com mensagem explicativa, em vez de um erro 500.
+- **`/criticos` usa "diferente de RESOLVIDO":** a condição é `prioridade == ALTA && status != RESOLVIDO`, o que inclui `ABERTO` e `EM_ANDAMENTO` e continuaria correta se um novo status não resolvido fosse criado.
+- **Mensagens de erro visíveis:** `spring.web.error.include-message=always` está ativo no `application.properties`, para que as respostas 400 e 404 informem o motivo do erro. Por padrão o Spring oculta essas mensagens por segurança. No Spring Boot 4, essa propriedade substitui a antiga `server.error.include-message`.
 
 ## Análise Técnica
 
@@ -54,7 +116,7 @@ Exemplo de JSON de um chamado:
 {
   "id": 1,
   "titulo": "Impressora não imprime",
-  "solicitante": "Maria",
+  "solicitante": "Rafael Rocha",
   "setor": "Financeiro",
   "prioridade": "ALTA",
   "status": "ABERTO"
@@ -63,12 +125,25 @@ Exemplo de JSON de um chamado:
 
 Se o JSON enviado for inválido, ou se um valor não existir no enum (por exemplo `"prioridade": "URGENTE"`), o Spring responde com erro `400 Bad Request`.
 
+Na desserialização, o Jackson exige o nome exato da constante do enum. Por isso, no `POST`, `"prioridade": "alta"` em minúsculas também gera `400`. Já o filtro `/chamados/prioridade?nivel=alta` aceita minúsculas, porque ali a conversão é feita pelo próprio código, que transforma o texto em maiúsculas antes de chamar `Prioridade.valueOf`.
+
+O cabeçalho `Content-Type: application/json` das respostas indica ao cliente o formato do corpo. Quando o mesmo erro é acessado por um navegador, que envia `Accept: text/html`, o Spring devolve uma página HTML (a *Whitelabel Error Page*) em vez de JSON. Esse mecanismo é a negociação de conteúdo.
+
 ### 4. Por que os chamados cadastrados não permanecem após reiniciar a aplicação
 
 Os chamados ficam numa coleção Java (`List<Chamado>`), que existe apenas na memória RAM, dentro da heap da JVM, enquanto a aplicação está rodando.
 
-Ao cadastrar um chamado com `POST`, ele é adicionado a essa lista e continua disponível para consultas. Nada é gravado em disco nem em banco de dados.
+Ao cadastrar um chamado com `POST`, ele é adicionado a essa lista e continua disponível para consultas. Isso acontece porque o Spring cria uma única instância do `ChamadoController` (escopo *singleton*) quando a aplicação sobe e reutiliza essa mesma instância em todas as requisições. Assim, a lista e o gerador de ID são compartilhados entre elas. Nada é gravado em disco nem em banco de dados.
 
-Quando a aplicação é encerrada ou reiniciada, o processo da JVM termina e a memória é liberada, então a lista deixa de existir. Na nova execução, a lista é recriada do zero a partir dos chamados fictícios definidos no código, e os cadastros feitos antes são perdidos.
+Quando a aplicação é encerrada ou reiniciada, o processo da JVM termina e a memória é liberada, então a lista deixa de existir. Na nova execução, a lista é recriada do zero a partir dos chamados fictícios definidos no código, e os cadastros feitos antes são perdidos. O gerador de ID também é recriado, então, depois de reiniciar, o primeiro chamado cadastrado volta a receber o id 11.
 
 Para manter os dados entre execuções seria preciso usar persistência, como JPA com um banco de dados (PostgreSQL, por exemplo) ou gravação em arquivo. O enunciado dispensa isso de propósito.
+
+## Limitações conhecidas
+
+- **Acentos:** os filtros e a busca ignoram maiúsculas e minúsculas, mas não acentos. `?texto=funcionario` não encontra "funcionário".
+- **Enums no `POST`:** os valores de `prioridade` e `status` precisam ser enviados em maiúsculas (por exemplo `"ALTA"`), como explicado na seção 3.
+- **Validação de campos:** apenas o `status` recebe valor padrão. Os demais campos do `POST` não são validados, então um chamado pode ser criado sem título ou setor. Uma evolução seria usar Bean Validation (`@NotBlank`, `@NotNull` e `@Valid`).
+- **Concorrência na lista:** o `AtomicInteger` garante IDs únicos, mas a `ArrayList` não é *thread-safe*. Com muitas requisições simultâneas, uma alternativa seria `CopyOnWriteArrayList` ou `Collections.synchronizedList`.
+- **Encapsulamento:** os atributos de `Chamado` são públicos. Uma evolução seria torná-los `private` e expô-los por getters.
+- **Persistência:** os dados existem apenas em memória, como explicado na seção 4.
