@@ -154,7 +154,7 @@ public class ChamadoController {
 
     @GetMapping("/criticos")
     public List<Chamado> listarCriticos() {
-        return ChamadosList.stream()
+        return chamadosList.stream()
                 .filter(c -> c.prioridade == Prioridade.ALTA && c.status != Status.RESOLVIDO)
                 .toList();
     }
@@ -162,10 +162,10 @@ public class ChamadoController {
     @GetMapping("/resumo")
     public ChamadoResumo resumo() {
         return new ChamadoResumo(
-                ChamadosList.stream().filter(c -> c.status == Status.ABERTO).count(),
-                ChamadosList.stream().filter(c -> c.status == Status.EM_ANDAMENTO).count(),
-                ChamadosList.stream().filter(c -> c.status == Status.RESOLVIDO).count(),
-                ChamadosList.size()
+                chamadosList.stream().filter(c -> c.status == Status.ABERTO).count(),
+                chamadosList.stream().filter(c -> c.status == Status.EM_ANDAMENTO).count(),
+                chamadosList.stream().filter(c -> c.status == Status.RESOLVIDO).count(),
+                chamadosList.size()
         );
     }
 
