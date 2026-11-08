@@ -10,110 +10,103 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 
 @RestController
 @RequestMapping("/chamados")
 public class ChamadoController {
-    private final List<Chamado> ChamadosList = new ArrayList<>(
-            List.of(
-                new Chamado(
-                    1,
-                    "Na minha maquina não funciona",
-                    "Micael Macedo",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.ABERTO
-                ),
-                new Chamado(
-                    2,
-                    "Erro no sistema de ponto",
-                    "Carla",
-                    "RH",
-                    Prioridade.BAIXA,
-                    Status.RESOLVIDO
-                ),
-                new Chamado(
-                    3,
-                    "Erro no processo de cadastro",
-                    "Rafael Rocha",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.EM_ANDAMENTO
-                ),
-                new Chamado(
-                    4,
-                    "Na minha maquina não funciona",
-                    "Micael Macedo",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.ABERTO
-                ),
-                new Chamado(
-                    5,
-                    "Na minha maquina não funciona",
-                    "Micael Macedo",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.ABERTO
-                ),
-                new Chamado(
-                    6,
-                    "Na minha maquina não funciona",
-                    "Micael Macedo",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.ABERTO
-                ),
-                new Chamado(
-                    7,
-                    "Na minha maquina não funciona",
-                    "Micael Macedo",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.ABERTO
-                ),
-                new Chamado(
-                    8,
-                    "Na minha maquina não funciona",
-                    "Micael Macedo",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.ABERTO
-                ),
-                new Chamado(
-                    9,
-                    "Na minha maquina não funciona",
-                    "Micael Macedo",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.ABERTO
-                ),
-                new Chamado(
-                    10,
-                    "Na minha maquina não funciona",
-                    "Micael Macedo",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.ABERTO
-                ),
-                new Chamado(
-                    1,
-                    "Na minha maquina não funciona",
-                    "Micael Macedo",
-                    "TI",
-                    Prioridade.BAIXA,
-                    Status.ABERTO
-                )
-            )
-    );
+    private final List<Chamado> chamadosList = new ArrayList<>();
+    private final AtomicInteger geradorId = new AtomicInteger(0);
 
-    @PostMapping("")
+    public ChamadoController() {
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "Impressora não imprime",
+            "Rafael Rocha",
+            "Financeiro",
+            Prioridade.ALTA,
+            Status.ABERTO)
+            );
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "Erro no sistema de ponto",
+            "Micael Macedo",
+            "RH",
+            Prioridade.MEDIA,
+            Status.RESOLVIDO)
+            );
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "Erro no processo de cadastro",
+            "Jaiana Santana",
+            "TI",
+            Prioridade.BAIXA,
+            Status.ABERTO)
+            );
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "Não funciona no meu computador",
+            "Joselito Junior",
+            "Financeiro",
+            Prioridade.ALTA,
+            Status.EM_ANDAMENTO)
+            );
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "IMPRESSORA não imprime",
+            "Rafael Rocha",
+            "RH",
+            Prioridade.MEDIA,
+            Status.RESOLVIDO)
+            );
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "impressora não imprime",
+            "Micael Macedo",
+            "TI",
+            Prioridade.BAIXA,
+            Status.ABERTO)
+            );
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "Senha bloqueada no sistema",
+            "Jaiana Santana",
+            "Financeiro",
+            Prioridade.ALTA,
+            Status.RESOLVIDO)
+            );
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "Sem acesso à rede Wi-Fi",
+            "Joselito Junior",
+            "RH",
+            Prioridade.MEDIA,
+            Status.EM_ANDAMENTO)
+            );
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "Criar conta de e-mail para novo funcionário",
+            "Rafael Rocha",
+            "TI",
+            Prioridade.BAIXA,
+            Status.ABERTO)
+            );
+        chamadosList.add(new Chamado(
+            geradorId.incrementAndGet(),
+            "Rede fora do ar no setor",
+            "Micael Macedo",
+            "Gerencia",
+            Prioridade.ALTA,
+            Status.EM_ANDAMENTO)
+            );                               
+    }
+
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Chamado cadastrar(@RequestBody ChamadoCreate body) {
-        int id = ChamadosList.size() + 1;
 
-        Chamado data = new Chamado(
-                id,
+        Chamado chamado = new Chamado(
+                geradorId.incrementAndGet(),
                 body.titulo(),
                 body.solicitante(),
                 body.setor(),
@@ -121,26 +114,25 @@ public class ChamadoController {
                 body.status()
         );
 
-        ChamadosList.add(data);
+        chamadosList.add(chamado);
 
-
-        return data;
+        return chamado;
     }
 
     @GetMapping("/{id}")
     public Chamado buscar(@PathVariable int id) {
-        return ChamadosList.stream()
+        return chamadosList.stream()
                 .filter(c -> c.id == id)
                 .findFirst()
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("")
-    public List<Chamado> listar() {return ChamadosList;}
+    @GetMapping
+    public List<Chamado> listar() {return chamadosList;}
 
     @GetMapping("/setor")
     public List<Chamado> filtrarPorSetor(@RequestParam String nome) {
-        return ChamadosList.stream()
+        return chamadosList.stream()
                 .filter(c -> nome.equalsIgnoreCase(c.setor))
                 .toList();
     }
@@ -154,7 +146,7 @@ public class ChamadoController {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Prioridade inválida: " + nivel);
         }
 
-        return ChamadosList.stream()
+        return chamadosList.stream()
                 .filter(c -> c.prioridade == prioridade)
                 .toList();
     }
@@ -162,7 +154,7 @@ public class ChamadoController {
     @GetMapping("/busca")
     public List<Chamado> buscarPorTitulo(@RequestParam String texto) {
         String termo = texto.toLowerCase();
-        return ChamadosList.stream()
+        return chamadosList.stream()
                 .filter(c -> c.titulo != null && c.titulo.toLowerCase().contains(termo))
                 .toList();
     }
