@@ -112,7 +112,7 @@ public class ChamadoController {
                 body.solicitante(),
                 body.setor(),
                 body.prioridade(),
-                body.status()
+                body.status() != null ? body.status() : Status.ABERTO
         );
 
         chamadosList.add(chamado);
