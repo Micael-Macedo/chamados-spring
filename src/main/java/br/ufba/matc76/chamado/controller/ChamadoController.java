@@ -2,6 +2,7 @@ package br.ufba.matc76.chamado.controller;
 
 import br.ufba.matc76.chamado.model.Chamado;
 import br.ufba.matc76.chamado.model.ChamadoCreate;
+import br.ufba.matc76.chamado.model.ChamadoResumo;
 import br.ufba.matc76.chamado.model.Prioridade;
 import br.ufba.matc76.chamado.model.Status;
 import org.springframework.http.HttpStatus;
@@ -157,6 +158,23 @@ public class ChamadoController {
         return ChamadosList.stream()
                 .filter(c -> c.prioridade == prioridade)
                 .toList();
+    }
+
+    @GetMapping("/criticos")
+    public List<Chamado> listarCriticos() {
+        return ChamadosList.stream()
+                .filter(c -> c.prioridade == Prioridade.ALTA && c.status != Status.RESOLVIDO)
+                .toList();
+    }
+
+    @GetMapping("/resumo")
+    public ChamadoResumo resumo() {
+        return new ChamadoResumo(
+                ChamadosList.stream().filter(c -> c.status == Status.ABERTO).count(),
+                ChamadosList.stream().filter(c -> c.status == Status.EM_ANDAMENTO).count(),
+                ChamadosList.stream().filter(c -> c.status == Status.RESOLVIDO).count(),
+                ChamadosList.size()
+        );
     }
 
     @GetMapping("/busca")
