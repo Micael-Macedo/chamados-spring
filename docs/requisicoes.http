@@ -1,0 +1,75 @@
+# =============================================================
+# API de Gerenciamento de Chamados — requisições de teste
+# Execute NA ORDEM, com a aplicação recém-iniciada
+# (os IDs e as contagens dependem disso).
+# =============================================================
+
+@baseUrl = http://localhost:8080
+
+### Teste 1 — Listar todos os chamados
+# Esperado: 200, 10 chamados (IDs 1 a 10)
+GET {{baseUrl}}/chamados
+
+### Teste 2 — Consultar chamado por ID
+# Esperado: 200, chamado 7 ("Senha bloqueada no sistema")
+GET {{baseUrl}}/chamados/7
+
+### Teste 3 — Consultar chamado inexistente
+# Esperado: 404
+GET {{baseUrl}}/chamados/99
+
+### Teste 4 — Filtrar por setor (maiúsculas)
+# Esperado: 200, IDs 1, 4 e 7
+GET {{baseUrl}}/chamados/setor?nome=FINANCEIRO
+
+### Teste 5 — Filtrar por setor inexistente
+# Esperado: 200, lista vazia []
+GET {{baseUrl}}/chamados/setor?nome=marketing
+
+### Teste 6 — Filtrar por prioridade
+# Esperado: 200, IDs 1, 4, 7 e 10
+GET {{baseUrl}}/chamados/prioridade?nivel=alta
+
+### Teste 7 — Filtrar por prioridade inválida
+# Esperado: 400, mensagem "Prioridade inválida: urgente"
+GET {{baseUrl}}/chamados/prioridade?nivel=urgente
+
+### Teste 8 — Buscar pelo título
+# Esperado: 200, IDs 1, 5 e 6
+GET {{baseUrl}}/chamados/busca?texto=impressora
+
+### Teste 9 — Buscar texto sem correspondência
+# Esperado: 200, lista vazia []
+GET {{baseUrl}}/chamados/busca?texto=teclado
+
+### Teste 10 — Listar chamados críticos
+# Esperado: 200, IDs 1, 4 e 10 (o 7 é ALTA, mas está RESOLVIDO)
+GET {{baseUrl}}/chamados/criticos
+
+### Teste 11 — Resumo por status
+# Esperado: 200, abertos 4, emAndamento 3, resolvidos 3, total 10
+GET {{baseUrl}}/chamados/resumo
+
+### Teste 12 — Cadastrar chamado (sem informar o status)
+# Esperado: 201, id 11, status ABERTO
+POST {{baseUrl}}/chamados
+Content-Type: application/json
+
+{
+  "titulo": "Servidor de arquivos fora do ar",
+  "solicitante": "Jaiana Santana",
+  "setor": "TI",
+  "prioridade": "ALTA"
+}
+
+### Teste 13 — Verificar o chamado cadastrado
+# Esperado: 200, chamado 11 com os dados do teste 12
+GET {{baseUrl}}/chamados/11
+
+### Teste 14 — Verificar o resumo após o cadastro
+# Esperado: 200, abertos 5, emAndamento 3, resolvidos 3, total 11
+GET {{baseUrl}}/chamados/resumo
+
+### Teste 15 — Verificar os críticos após o cadastro
+# Esperado: 200, IDs 1, 4, 10 e 11
+GET {{baseUrl}}/chamados/criticos
