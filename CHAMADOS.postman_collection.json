@@ -1,0 +1,1449 @@
+{
+  "info": {
+    "_postman_id": "e08bae9f-13ce-4c09-8427-a760b8f05ef4",
+    "name": "CHAMADOS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "21955789"
+  },
+  "item": [
+    {
+      "name": "Chamados",
+      "item": [
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}chamados",
+              "host": [
+                "{{base_url}}chamados"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:33:29 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "1358"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "HttpRequestRatePerPort:1500/m"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:42s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "1"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": ""
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "6c7ce99e-dd57-4773-8ba2-c1aa58b23ee4"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"titulo\": \"Impressora não imprime\",\n    \"solicitante\": \"Rafael Rocha\",\n    \"setor\": \"Financeiro\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"ABERTO\"\n  },\n  {\n    \"id\": 2,\n    \"titulo\": \"Erro no sistema de ponto\",\n    \"solicitante\": \"Micael Macedo\",\n    \"setor\": \"RH\",\n    \"prioridade\": \"MEDIA\",\n    \"status\": \"RESOLVIDO\"\n  },\n  {\n    \"id\": 3,\n    \"titulo\": \"Erro no processo de cadastro\",\n    \"solicitante\": \"Jaiana Santana\",\n    \"setor\": \"TI\",\n    \"prioridade\": \"BAIXA\",\n    \"status\": \"ABERTO\"\n  },\n  {\n    \"id\": 4,\n    \"titulo\": \"Não funciona no meu computador\",\n    \"solicitante\": \"Joselito Junior\",\n    \"setor\": \"Financeiro\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"EM_ANDAMENTO\"\n  },\n  {\n    \"id\": 5,\n    \"titulo\": \"IMPRESSORA não imprime\",\n    \"solicitante\": \"Rafael Rocha\",\n    \"setor\": \"RH\",\n    \"prioridade\": \"MEDIA\",\n    \"status\": \"RESOLVIDO\"\n  },\n  {\n    \"id\": 6,\n    \"titulo\": \"impressora não imprime\",\n    \"solicitante\": \"Micael Macedo\",\n    \"setor\": \"TI\",\n    \"prioridade\": \"BAIXA\",\n    \"status\": \"ABERTO\"\n  },\n  {\n    \"id\": 7,\n    \"titulo\": \"Senha bloqueada no sistema\",\n    \"solicitante\": \"Jaiana Santana\",\n    \"setor\": \"Financeiro\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"RESOLVIDO\"\n  },\n  {\n    \"id\": 8,\n    \"titulo\": \"Sem acesso à rede Wi-Fi\",\n    \"solicitante\": \"Joselito Junior\",\n    \"setor\": \"RH\",\n    \"prioridade\": \"MEDIA\",\n    \"status\": \"EM_ANDAMENTO\"\n  },\n  {\n    \"id\": 9,\n    \"titulo\": \"Criar conta de e-mail para novo funcionário\",\n    \"solicitante\": \"Rafael Rocha\",\n    \"setor\": \"TI\",\n    \"prioridade\": \"BAIXA\",\n    \"status\": \"ABERTO\"\n  },\n  {\n    \"id\": 10,\n    \"titulo\": \"Rede fora do ar no setor\",\n    \"solicitante\": \"Micael Macedo\",\n    \"setor\": \"Gerencia\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"EM_ANDAMENTO\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "GetById",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}chamados/11",
+              "host": [
+                "{{base_url}}chamados"
+              ],
+              "path": [
+                "11"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/1",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:34:59 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "131"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "HttpRequestRatePerPort:1500/m"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:18s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "1"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": ""
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "99f1dff5-959d-4897-b28f-13587837997a"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 1,\n  \"titulo\": \"Impressora não imprime\",\n  \"solicitante\": \"Rafael Rocha\",\n  \"setor\": \"Financeiro\",\n  \"prioridade\": \"ALTA\",\n  \"status\": \"ABERTO\"\n}"
+            },
+            {
+              "name": "404",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/11",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "11"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "404"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:35:21 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache,no-store"
+                },
+                {
+                  "key": "expires",
+                  "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW1N9PhAiFjHdDSw8mX4xXAR6DHd9k4pqw6-EKJWrrKvU103Kl8RiKcO_x5OJlQ4X2eYr2z5E4ajwnzyfHOe0C407E5QyhWjCRVYUSVh0SLAzQy0S-gOkC1EisDD4TNcb6SgyUbM-0ud2YlnIdMrirFSfshGpBgWgVxhYeM5o4kutJg-wOSdj-zJKR3EUznsLh6dMMBXB-CqWxNgVHPsE6IfWFTvI8Ru83RiQnXfLa5TCabSC9gyk-ov42-IJ77_iSKZ3NrxLvFhKjPsrAaunEXLK-dvN0oaGIM9QNL8Vjzow8CPom-LJ5ejb8F5bYdsx-CHV0FWhFERU0yFTuQPRShkZu6R4PPMbL0OAS1bTr85ikfGLbsaZh_xcBaEVZ7POSY_5UsH5oZbaXLdZI_JDCr2Po52vWzg7j9M4YqsMLoXoNS7W3hiqxZCZrzHBlGKpR7sw3iBMtyrL6Q4hspgA4oeO7EWTdupcGJhrg_dhn7neIuC-CzLJ52QaWKsJWwqrV0JRViHxSgwNAgX0xzOHmhsbwz6Gg4ofrdEvsUCN9tU2LtF5LyYptEDhbMtPzCDIoL1MK1oHvCdwtZ2fDTK1q4UnUGdzHmTTVvH2MABOgi4Goo1ul-iqlXeBYI1Xw1GuAAwDjJfgBJgq7mB0tQKXVWXaMjCPlhs-GysuVCKOKQGyf6Hriho0HAr6YKIjMH18-XKoj2Wx-opHzgUr04CssfzqQMW6n6XMohGvIe-V-LGnQ6VV0OL5BeVvEx15Rnf6-UJrwijR62yL0seksuLk3b-UWOcK3CwL93pdMCzLJehWt8-0R82i6q13ojhlQ4uAuWiUgMPwJt_xwavvYpn6V8Fn46LbKuMSU2zC2x0n7o4h_Bp1DMGa7cUfUrERYcDE51d0clGgEOwKuA-Dh-fcctyERT21a3taNgd4qbL_NII7ciws3voX3yYIo9gLYXMVzAqGD3yoZYA08V6ybX5wKzD; path=/; secure; samesite=none; Partitioned"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "ClientConnectionsPerPort"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:60s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": "1500"
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": "1496"
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "4"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": "0"
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "5ee3d7de-45d8-4c42-918d-7a0f3a4f25b3"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-09T11:35:21.677Z\",\n  \"status\": 404,\n  \"error\": \"Not Found\",\n  \"message\": \"404 NOT_FOUND\",\n  \"path\": \"/chamados/11\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Priority",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}chamados/prioridade?nivel=invalido",
+              "host": [
+                "{{base_url}}chamados"
+              ],
+              "path": [
+                "prioridade"
+              ],
+              "query": [
+                {
+                  "key": "nivel",
+                  "value": "invalido"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200 alta",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/prioridade?nivel=alta",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "prioridade"
+                  ],
+                  "query": [
+                    {
+                      "key": "nivel",
+                      "value": "alta"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:43:50 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "696"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache,no-store"
+                },
+                {
+                  "key": "expires",
+                  "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW1xm5mZTny-mpftwJYqIZaoDV_I4OlUodPOl6lw97JZq6gPVPz2tpn3dMXt1Uz5APpAB8QG5jFbDOe3SUkwidxEMmD9Jooeu_D1HHNNmILjywerb-zqdZt5q9N99O-QmKxfDpjd7_CJc0Gm81TdTpEPnu4uDJ53dLLqtd5uMKX9m7YKwEQdU5Az8cbHONpQxVSCLna3cEiNxYDBfHrRTRXWxyK-OZNTk4FuhK34F1DBrg2Olpev0dc3OdpcThFU_j941G-5eFDHZLABmGirujs3YGmIFpVQn4f8uj3LIH9mm5kO8TJwQ42zsw1WfV4jwj52BpMF3EMoZ8rOQDsUE5X6SrkL2mJW1f3dR-wOFCQn0l_Gc7fwTjYmbI-9FFLjF-1PO4EsOU29cVUF2Wf7c21xKMohkrjf8pMpIJBZFBNI8XxYqPmm5H772x8ESz8Dm4aCqeY2r8JJRl94vuAodqkCEctAGBNAFcZa_JL2ttLrv7HUR8lWvfI0fe3raANaK3J-R3x8Fta_Db9UJB6a1bTB-6f_jTP-cG_rQBTIwzXqKyFFuh_FvyTkr87UTcm0PR3h5pvtgf7tMQt0kZjUzpV3_GQPt5uFLN5toBlHlgc2hcawZCbw3MJpFNEAljBjyOptu6A0iGBxdB4ZKTuO4pMM243-QJXrrgtFpR8XKIqG333drawN_O5vAAwvUbjd28nNph1xWemMFu-9wxo8rAGG-AxdsI6uwM7fmqYVNEs9MPEulZr6OZCfP9zMDqd4b-jt2dDq7Ycs43qXOyH7Fuv045rhaZDHzxNK5P6q_7DqrJi6SM0kgrTAzzdx8cqa3sPLn_tmXr5sUlvLVIe_0bNRDV4qwZoexrrjz5iD6EX7EYeoLHtLutLQOySBSjcOm5qT4RWi2S7sT7sgYD1uoRmuoHCG9iFLFlSKeyfqze4Gd45eZZNWyv2wm1vKP5dlYwuPjSNVx_cSmG3GwofbCv46; path=/; secure; samesite=none; Partitioned"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "HttpRequestRatePerPort:1500/m"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:34s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "1"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": ""
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "5c6b3cd0-dcea-4d8c-aba0-a8fa9877f0fc"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"titulo\": \"Impressora não imprime\",\n    \"solicitante\": \"Rafael Rocha\",\n    \"setor\": \"Financeiro\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"ABERTO\"\n  },\n  {\n    \"id\": 4,\n    \"titulo\": \"Não funciona no meu computador\",\n    \"solicitante\": \"Joselito Junior\",\n    \"setor\": \"Financeiro\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"EM_ANDAMENTO\"\n  },\n  {\n    \"id\": 7,\n    \"titulo\": \"Senha bloqueada no sistema\",\n    \"solicitante\": \"Jaiana Santana\",\n    \"setor\": \"Financeiro\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"RESOLVIDO\"\n  },\n  {\n    \"id\": 10,\n    \"titulo\": \"Rede fora do ar no setor\",\n    \"solicitante\": \"Micael Macedo\",\n    \"setor\": \"Gerencia\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"EM_ANDAMENTO\"\n  },\n  {\n    \"id\": 11,\n    \"titulo\": \"Servidor de arquivos fora do ar\",\n    \"solicitante\": \"Jaiana Santana\",\n    \"setor\": \"TI\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"ABERTO\"\n  }\n]"
+            },
+            {
+              "name": "200 media",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/prioridade?nivel=media",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "prioridade"
+                  ],
+                  "query": [
+                    {
+                      "key": "nivel",
+                      "value": "media"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:44:10 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "394"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "HttpRequestRatePerPort:1500/m"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:7s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": "1500"
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": "1496"
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "4"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": "0"
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "fe4bf4a7-b6e6-4b4a-8b1f-5a2e63c14780"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 2,\n    \"titulo\": \"Erro no sistema de ponto\",\n    \"solicitante\": \"Micael Macedo\",\n    \"setor\": \"RH\",\n    \"prioridade\": \"MEDIA\",\n    \"status\": \"RESOLVIDO\"\n  },\n  {\n    \"id\": 5,\n    \"titulo\": \"IMPRESSORA não imprime\",\n    \"solicitante\": \"Rafael Rocha\",\n    \"setor\": \"RH\",\n    \"prioridade\": \"MEDIA\",\n    \"status\": \"RESOLVIDO\"\n  },\n  {\n    \"id\": 8,\n    \"titulo\": \"Sem acesso à rede Wi-Fi\",\n    \"solicitante\": \"Joselito Junior\",\n    \"setor\": \"RH\",\n    \"prioridade\": \"MEDIA\",\n    \"status\": \"EM_ANDAMENTO\"\n  }\n]"
+            },
+            {
+              "name": "200 baixa",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/prioridade?nivel=baixa",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "prioridade"
+                  ],
+                  "query": [
+                    {
+                      "key": "nivel",
+                      "value": "baixa"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:44:24 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "405"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache,no-store"
+                },
+                {
+                  "key": "expires",
+                  "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW3xkeq1TIt2H1FNcRgZIQIcI1FFQJEH82kabPM-MLCFTZ0CnR7nft5lfQKJjk3t9ZZ9bTfXG1BONUg2U92xux17nqJLbCC1QrI1S2dGwYCPz5G6NdMBeiv1heRTHk1JFEMzcK-7NHb1-Khxbw-g2lYWCOfTUcnvSSX1FGZyTsqb1nL-EhIAtL9bVxhaQHraLMpCS8D4MuZw9FiZt-uMdS9RZ26SGW4WOaxQJXAbA2GtQH2juNA7H0Zr7yrjSiDlbvCxP8u92aQM9_sCgd8sf-VPkOPjF-iDpI6BMDF9BOL2DHuU80MesrQabiUBog-Y0xnuQAtUgF_1Bf18T0lmj2h-x6quulSg_6ufG09TsJkjwYreWkDtRGzSPyCeTS5xQBHkX71rzxWbvGvhvqsdBQkL97w2iMLngiEpeg9vRwOHwKOqzwJQpRL_vPi5cfnCTzTvAJDg1mOJHTRGL26382_jSJsk69mBFn26gsq3qixMWWf0fRIpdIdgst36UYBlYKfXvIS96KDn7jeRxwjGPFOLWWnDYJ2ZARZhCj67B4bmsioH1KKR-BJaSSSh_AOUDKkfOpn9aqj74cnKrVW2QwxIf4ylmsdMCEPrq-K5hKqY2LQ4pG7tK_SpnuZx0kEpF8wdDba5VOEtPoAeEGkrataIP5dMnoh9X0beWV_ZtFMqMnoJuVzKh-B0rKUxR3fx9FGwFrWrHsEGkVwuwAOQ0SFSdVgEqeWRd3SoO-v-vGhksyl6eM0OMQZwP4cI_hMS9WdmGEjDyiro3BQ54M6wdS1Q_21sa4N4ZwgpaK1TgY2ajsbFbZmRd2PNVuRYfv24M4tE0I5IMSEaRthLK2uGe9vTXfmr38wRGq1HjvLwhAikmQQhBYtgTqKrbB0jH_FL5iX2DeN10OoO8U46hGB9VojDmVvlp2u-XpkF4bXlOe6UZS5W-9Wg2pVDbMDO9X_28WnIYRVL4Bwo8SipQvQtohsN; path=/; secure; samesite=none; Partitioned"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "ClientConnectionsPerPort: max 1000"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "ClientConnectionsPerPort:999"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:19s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "1"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": ""
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "2ee33f76-9c6d-48d3-a60e-ec217deed2d7"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 3,\n    \"titulo\": \"Erro no processo de cadastro\",\n    \"solicitante\": \"Jaiana Santana\",\n    \"setor\": \"TI\",\n    \"prioridade\": \"BAIXA\",\n    \"status\": \"ABERTO\"\n  },\n  {\n    \"id\": 6,\n    \"titulo\": \"impressora não imprime\",\n    \"solicitante\": \"Micael Macedo\",\n    \"setor\": \"TI\",\n    \"prioridade\": \"BAIXA\",\n    \"status\": \"ABERTO\"\n  },\n  {\n    \"id\": 9,\n    \"titulo\": \"Criar conta de e-mail para novo funcionário\",\n    \"solicitante\": \"Rafael Rocha\",\n    \"setor\": \"TI\",\n    \"prioridade\": \"BAIXA\",\n    \"status\": \"ABERTO\"\n  }\n]"
+            },
+            {
+              "name": "400",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/prioridade?nivel=invalido",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "prioridade"
+                  ],
+                  "query": [
+                    {
+                      "key": "nivel",
+                      "value": "invalido"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "400"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:44:43 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "ClientConnectionsPerPort: max 1000"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "ClientConnectionsPerPort:999"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:43s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "1"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": ""
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "470fcc65-5c60-4891-8aec-4136773501a2"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"timestamp\": \"2026-11-09T11:44:43.091Z\",\n  \"status\": 400,\n  \"error\": \"Bad Request\",\n  \"message\": \"Prioridade inválida: invalido\",\n  \"path\": \"/chamados/prioridade\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Search",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}chamados/busca?texto=impressorasupermaluca",
+              "host": [
+                "{{base_url}}chamados"
+              ],
+              "path": [
+                "busca"
+              ],
+              "query": [
+                {
+                  "key": "texto",
+                  "value": "impressorasupermaluca"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/busca?texto=impressora",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "busca"
+                  ],
+                  "query": [
+                    {
+                      "key": "texto",
+                      "value": "impressora"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:42:57 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "387"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache,no-store"
+                },
+                {
+                  "key": "expires",
+                  "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW1ckUaFdy4O2WRFlYq2lOQeS91Nm331vy3AX1bh1XP5urcfmTfhcu3OJL_j6Yc5Qv1JBZxc8sVEKvkTasMP3O1n8OmpI0tQbmUmcTKczgkLlbd9DIKsdxZhCxgbwBIWVc68XcRVksBcWIDlwDSQd6ZzuwpsxMGrznWbr0g_gHWXYirqkRSEYIiyNwy9xXAeC5vGKLM4BkGWx3bxxBdalRzfUVmgIkttsZ7D7bF_c3Hq5oSzUwUkzebeyypvhbfdIPH7HmBD9Tom3FGpntDib3PIQ3UUQgox3Qms9d_bCGMBinoqzDRmoKJayp9H-cNWR6CaCLcs5Q-UvkX3RErTdi6e3YeujeDM3IhmQNBpdu1rX7DgFFj2dHw2_n7MPdea7XT7jzsb9w8lrKhk607Ed5iOEIsBuy6YQgRHW5wrtVfFefLnDDn-m7dEW7fJA5Y9nYhKPGraz2uUMSYKW2FDmYiow6CWlzylWBqoaLqYsRUaBXBxmRCtw2cIXub5i8Tu_tVIuc301fYEMdTOu6_xDdinLxvx8_7lle8E-E2Sx-mzrg0snoxBs93-rnMnuWMsw0DIxskgIQVkxUI_7a1ypmUXZpyTRD1EPQNx3u4PPoxoWzsPXhcr7UleYzRAi-lkuJVUr4sXhQu4yiuLe1ugKdQp0tWKRbvGkVONQ9xPgNJ7aW2CdHX1UY3dwLjH-PrFy1ahvoXQkUu1ZwesoEtTKX2fKZf1M_vrJ8GjnJR3M3Xl4pWQObFRh8tUiMPgno4gktAe4xXC2HVHQZ__U6mKYMUNEAA3N9EldItnyD-gmlmL2p8wuwVqoNwTE5zAN9bqbxqlKSTGZ2-bmNxQ69AdwjcnIIupCD_O8NIZlFnwju3DiWr2bYHglx_jbcJl-1sn7_2MVWgyck58S2DD-Ahxtv-XM-mwx07ds6ZaIbl1W1pGKpEdl5bpqBDAjRPIXoWQtvzEWT0ZXz0Yh8sAUJTx_SUw; path=/; secure; samesite=none; Partitioned"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "HttpRequestRatePerPort:1500/m"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:28s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "1"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": ""
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "228c94ef-13dc-439c-b48f-34f85aad3215"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"titulo\": \"Impressora não imprime\",\n    \"solicitante\": \"Rafael Rocha\",\n    \"setor\": \"Financeiro\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"ABERTO\"\n  },\n  {\n    \"id\": 5,\n    \"titulo\": \"IMPRESSORA não imprime\",\n    \"solicitante\": \"Rafael Rocha\",\n    \"setor\": \"RH\",\n    \"prioridade\": \"MEDIA\",\n    \"status\": \"RESOLVIDO\"\n  },\n  {\n    \"id\": 6,\n    \"titulo\": \"impressora não imprime\",\n    \"solicitante\": \"Micael Macedo\",\n    \"setor\": \"TI\",\n    \"prioridade\": \"BAIXA\",\n    \"status\": \"ABERTO\"\n  }\n]"
+            },
+            {
+              "name": "200 empty",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/busca?texto=impressorasupermaluca",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "busca"
+                  ],
+                  "query": [
+                    {
+                      "key": "texto",
+                      "value": "impressorasupermaluca"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:43:16 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "2"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "HttpRequestRatePerPort:1500/m"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:60s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": "1500"
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": "1495"
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "5"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": "0"
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "d49aa5f7-1930-49f2-a792-57866acbc62d"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "[]"
+            }
+          ]
+        },
+        {
+          "name": "Resume",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}chamados/resumo",
+              "host": [
+                "{{base_url}}chamados"
+              ],
+              "path": [
+                "resumo"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/resumo",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "resumo"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:36:26 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "55"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache,no-store"
+                },
+                {
+                  "key": "expires",
+                  "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW11JrEWe2G49JZuwnwXTl23qrRf2u5fbve03hyHRVXyF8ebded-DMjtqPPxIYSeL-A5Hn2rljpfm3NVthcYn5Mi3MNnotgfTc3O0a8XIrCvHKfAOv8r3Wavy4xuoGgKTrZ74Pj-LxCByc2Vfz8sN8wcoRi9EmghD91o66xxCL7eo4dr9qNaiT0ardExsUD6ziMbVoflvFIcvhLkhMkXMnigI6UMbT6n9QiB2hRcV_dL0abyjZdSHHzCtvyNvLDTVhYqyJt3P9fkGay-THfiqn6j5umgjoIptHtu-tCo6kyznbzbOQJV1jxTHBfgz_6v8i_jG8vxBK5G65mbtS9vEwMAg5-7AyL8wO4_3MEzXOLjFjU_qJmlssgHB9smcyRy1Bmp0fDMex93Ga_KjFDnF8dypt2jfDWeGk0oU587LVunDvO77mJR8q8crAuc3xeluHyYLaV1vXgJRXjL0_bSikYdWuSj2VCvUCyanvZMA0j0vaNj8u5JwlCokn_lvgw-V_SEv6PTgRfneKFTrNZl5hpHq3UjVfdNcp6_Q_rBkv9uvvcn5QFlpMh-L7ztK1Ddivm8tHHfMw0_Wv31jW-cHXtFxKhXfIOCuUI5nFBGZRuymU8ZYUsDUNB9H11AMRWYqNXoYfTof7DjrX8Jd06eAM0NXM4KSCKnMUHD_udVFn4i5flgIhZi3FSseHy2s0_2CAROfUXdz6RvwUpNcpNqYnS6HH0Zusal-vRb-Xk1JUJub5rZg_ZDdgKKP7TOIZsyKQYAwHuthFgMNG_gkdFxu3_I2jmeQLHL2kpJt6aN-0jQUhgIVeK2UwE4Jo3tlMkMlBf7sP826trS_IrDzGGxDW7KsQpOGcuJ5pgSw_s9bMtF54UiTbMSHjMFWw_K-t6svbcPUmJxN-J340wHHJ1hTvWJFH-BkA1KA1vZlZs5aft1uPGbVVWvBtxTR-kbWLBUovJcs0wG077GLCFgP4QoAZ0Q; path=/; secure; samesite=none; Partitioned"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "HttpRequestRatePerPort:1500/m"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:14s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "1"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": ""
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "3dc5e846-a429-4977-affe-b6cabebcd10b"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"abertos\": 4,\n  \"emAndamento\": 3,\n  \"resolvidos\": 3,\n  \"total\": 10\n}"
+            }
+          ]
+        },
+        {
+          "name": "Critical",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}chamados/criticos",
+              "host": [
+                "{{base_url}}chamados"
+              ],
+              "path": [
+                "criticos"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "200",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}chamados/criticos",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ],
+                  "path": [
+                    "criticos"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "200"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:42:12 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "556"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache,no-store"
+                },
+                {
+                  "key": "expires",
+                  "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW2jROqVqKcLdq_VmZSMCKLohaUwPUMDT9Mi24ndtnHMxd5HhFE96TmIBNjgA_P63xexqwbvrOyiuAiNmJa28-dxuslrvuCmaD68rlXBJGPJs3brumfd4adUzIhZ_lQ0-Za7pWCFDGKRJvFEZVA9oz0dl_m1d_tBJxwXVLFTQFN-dFve2goVV2d6bA2ChetyQKktCRQ3mxvczht4DvTZ8t6RouD3YwDABFYOmNXuzZ0ifF-VZmJ0mzVnaY9KmcCkU0UGpVy2Yo6UZttRThjpvhECAXnPln_68O8zlzECooXeAJG3EDZgQkgu6z-zELWKVwovKB-NPSSHxHFlOLVFarq54H9aja4-APvRK_ehUl4fWMTqdjBDCdhwzrdbAxqqeJhQbkjCNvEu5XK9cmV4rnLf9PuKlssItDvEpRyGlyUxtEjiOy2RwdKnNAS9-xJkfVKMTLm7SnhWLN7p3LAiZUnBgBnth9bXB9LPishAmAjrA7GtW-bZyFnGWEHgNvoJeVQNsFSrLKP2RRMdM2JqCtgQNk1sn0wANdGahzzDaspowEMud9lhMOOh5w8161oxMcCDpmPLU_ILcTIullajduiQBD0mS6suEZdBCe3MNhoyIYmc49esWi_aYBUXbdiCosPGxbPf9ixTCK7qmUYrL9ENcV3-pUmlRlCVbhAAHiZ2F6QvQ8Kw4L7bCPquMwq1__JmOKom2EytbaVo0KGFOCyGUA5fxxSgrFDeExhpNiCFDB71c57nlktxyHR3hU4ykASr457NvycyDHkos4DVnZjZnYAeRM5wPGQ5LfVE8DuMP-SuaJa4RZiEiaRSu1KY6Zu6Can9CC6CrTgC4WKHG99xfz0G5-YmhbnV4-DQqPlrSYEtN2mJwbHzc7qWsWHQkz2-GZ9M2KMWRqPWjD8Zsi2scCVUeX1YYPi1raBXKiG6mwRMxbYd6KAxCeXl-1eJg87DNr7xJQTXgKM_sozwmQa-; path=/; secure; samesite=none; Partitioned"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "HttpRequestRatePerPort:1500/m"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:31s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": ""
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "1"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": ""
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "cc569b36-0952-4fb4-82b3-d37323c418cd"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 1,\n    \"titulo\": \"Impressora não imprime\",\n    \"solicitante\": \"Rafael Rocha\",\n    \"setor\": \"Financeiro\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"ABERTO\"\n  },\n  {\n    \"id\": 4,\n    \"titulo\": \"Não funciona no meu computador\",\n    \"solicitante\": \"Joselito Junior\",\n    \"setor\": \"Financeiro\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"EM_ANDAMENTO\"\n  },\n  {\n    \"id\": 10,\n    \"titulo\": \"Rede fora do ar no setor\",\n    \"solicitante\": \"Micael Macedo\",\n    \"setor\": \"Gerencia\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"EM_ANDAMENTO\"\n  },\n  {\n    \"id\": 11,\n    \"titulo\": \"Servidor de arquivos fora do ar\",\n    \"solicitante\": \"Jaiana Santana\",\n    \"setor\": \"TI\",\n    \"prioridade\": \"ALTA\",\n    \"status\": \"ABERTO\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"titulo\": \"Servidor de arquivos fora do ar\",\r\n  \"solicitante\": \"Jaiana Santana\",\r\n  \"setor\": \"TI\",\r\n  \"prioridade\": \"ALTA\",\r\n  \"status\": \"ABERTO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}chamados",
+              "host": [
+                "{{base_url}}chamados"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "201",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"titulo\": \"Servidor de arquivos fora do ar\",\r\n  \"solicitante\": \"Jaiana Santana\",\r\n  \"setor\": \"TI\",\r\n  \"prioridade\": \"ALTA\",\r\n  \"status\": \"ABERTO\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}chamados",
+                  "host": [
+                    "{{base_url}}chamados"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": ":status",
+                  "value": "201"
+                },
+                {
+                  "key": "date",
+                  "value": "Mon, 09 Nov 2026 11:41:22 GMT"
+                },
+                {
+                  "key": "content-type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "content-length",
+                  "value": "134"
+                },
+                {
+                  "key": "cache-control",
+                  "value": "no-cache,no-store"
+                },
+                {
+                  "key": "expires",
+                  "value": "Thu, 01 Jan 1970 00:00:00 GMT"
+                },
+                {
+                  "key": "pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "set-cookie",
+                  "value": ".Tunnels.Relay.WebForwarding.Cookies=CfDJ8NJJuTEdEi5KqensronCVW29xl4Q_3gVInLTyFuPEZoEsOWUyPYAr4fQYzTbLLJdnPv2db3QDEZSRZZkSkVLeXGt6E36Wd5sc2dBh4hrkAc86auZvqHBYPOgTxFXLaSZ14cUa_i84vJXPFzBqX083riYjJOuz0sSwaCZePw63HICmqPuweT7sjZadcI1ZmKk9QwlgVO9plXAfZyCicPmFXD2LUb3h93NjVcykc2g1F3chBHsF3FrYptOjgVBTbPea0fYUi2LA7M8OBX6S3Ncf6Bq6VfRNv7qcafJkyhfU1t_7hW_zrPRWz-QltrKq7dd13e0ceEd4enWykCZRqxvXtPtVOOT20dqSJUxcQR4wbKLmysxDvNqnX6EEZq7BevW2uCBzf9B--No26gWm3BSgAcamWZL5BnI9IMsOI0oBlApuo7jEv1gOQuk5l7JXlXoTtznG0G7rl1lcFOmaO6Itx-nDXGQgPvzkop5DrZRgCsn-SbpuWRYIxU73RSWldeFjDD72Y1pL9uHDEoh5nMMQOWihQa575-uGB_eoDCyuMZ_oGuiozEWa5fn4F2mvj_KtcFeDuFG30K6SbdCt2gQJUMikrxStMOpQyXFllimecX01SJ9DnoZyWRAwQsLaQd1jJr88SITEdC6kXAYqye-a1Bz8DMjZA4z03l7u0Rsb8bejNo1NyMu7s50m_It6is8pVwSDflcziXxiB3PllJb63H6muaeiVl4HaWrai2ftEwckeEKSrCqKyKCX3rrXu3UXzSn5VcmjR1NUpam7uglUAmyb8G81rxGl7OiahIbg3HHNR-xWsXFzkAj1EeOIDv3ts4sNaRdiN7d65qwRFULTztVbaep0X4HxZzYPpuC4xxxabdJpDBv_TEbpQdsOJznNWF6T8Uo48kIT93nUSUdxz_xtmQt2WioYt22xLQnDFOcfIvb9t9LVpCPUWx4SB_dNq9-fXz_XXB6QyzlyRQ_u8zVd52y4UKQzy21wYV8fl3_; path=/; secure; samesite=none; Partitioned"
+                },
+                {
+                  "key": "x-content-type-options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "ratelimit-limit",
+                  "value": "HttpRequestRatePerPort:1500/m"
+                },
+                {
+                  "key": "ratelimit-remaining",
+                  "value": "HttpRequestRatePerPort:1499"
+                },
+                {
+                  "key": "ratelimit-reset",
+                  "value": "HttpRequestRatePerPort:53s"
+                },
+                {
+                  "key": "x-report-abuse",
+                  "value": "https://msrc.microsoft.com/report/abuse"
+                },
+                {
+                  "key": "x-ms-ratelimit-limit",
+                  "value": "1500"
+                },
+                {
+                  "key": "x-ms-ratelimit-remaining",
+                  "value": "1496"
+                },
+                {
+                  "key": "x-ms-ratelimit-used",
+                  "value": "4"
+                },
+                {
+                  "key": "x-ms-ratelimit-reset",
+                  "value": "0"
+                },
+                {
+                  "key": "vssaas-request-id",
+                  "value": "2149f492-8f99-4e5e-befc-19675c77f0dd"
+                },
+                {
+                  "key": "strict-transport-security",
+                  "value": "max-age=31536000; includeSubDomains"
+                },
+                {
+                  "key": "x-served-by",
+                  "value": "tunnels-prod-rel-brs-v3-cluster"
+                },
+                {
+                  "key": "x-robots-tag",
+                  "value": "noindex, nofollow"
+                },
+                {
+                  "key": "referrer-policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 11,\n  \"titulo\": \"Servidor de arquivos fora do ar\",\n  \"solicitante\": \"Jaiana Santana\",\n  \"setor\": \"TI\",\n  \"prioridade\": \"ALTA\",\n  \"status\": \"ABERTO\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "key": "local_url",
+      "value": ""
+    }
+  ]
+}
